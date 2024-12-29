@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcard Flip</title>
+  <style>
+    .card-container {
+      perspective: 1000px;
+      width: 200px;
+      height: 300px;
+    }
+
+    .flip-card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    .flip-card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front, .flip-card-back {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      font-size: 1.2em;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background-color: #f9c74f;
+    }
+
+    .flip-card-front {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <p>Click to flip</p>
+        </div>
+        <div class="flip-card-back">
+          <p>Your quote or rule goes here!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
